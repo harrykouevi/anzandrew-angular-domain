@@ -145,9 +145,6 @@ export class AuthService implements OnDestroy {
               console.log(data);
             });
 
-          console.log('ccccccXXX');
-          console.log(this.userStorage.user);
-
 
           authenticationRequestCompletedAction(this._authStore$)({
             isLoggedIn: Boolean(source.isAutenticated),
