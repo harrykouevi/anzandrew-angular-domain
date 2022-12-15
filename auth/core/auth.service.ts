@@ -124,11 +124,11 @@ export class AuthService implements OnDestroy {
 
     authenticatingAction(this._authStore$)();
 
-    Log('Logging in...', `${httpServerHost(this.rhhost)}/${this.rhloginPath}`);
+    Log('Logging in...', `${httpServerHost(this.host)}/${this.loginPath}`);
 
     return this.httpClient
       .post(
-        `${httpServerHost(this.rhhost)}/${this.rhloginPath}`,
+        `${httpServerHost(this.host)}/${this.loginPath}`,
         Object.assign(body, { remember_me: body.remember || false })
       ).pipe(
         tap(data => {
