@@ -131,15 +131,10 @@ export class AuthService implements OnDestroy {
         `${httpServerHost(this.host)}/${this.loginPath}`,
         Object.assign(body, { remember_me: body.remember || false })
       ).pipe(
-        tap(data => {
-          console.log('response');
-          console.log('133');
-          console.log(data);
-        }),
+
         mapToHttpResponse<ILoginResponse>(this.loginResponseHandlerFunc || DrewlabsV2LoginResultHandlerFunc),
         onAuthenticationResultEffect(this.userStorage, this.oAuthTokenProvider, this.rememberTokenProvider, body.remember || false),
         mergeMap(source => {
-          console.log('sourire');
 
           this._authStore$.connect().subscribe(data => {
               console.log(data);
