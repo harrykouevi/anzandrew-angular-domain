@@ -2,3 +2,7 @@
 
 - Added setControlConfig method to SimpleDynamicFormComponent component
 - Added getControlConfig method to SimpleDynamicFormComponent component
+
+## [] - 2023-04-22
+###
+- updated interface IAppUser on auth/contracts/v2/user/user.ts

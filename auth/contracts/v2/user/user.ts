@@ -19,12 +19,15 @@ export const userCanAny = (authorizable: Authorizable, authorizations: string[])
   if (!isDefined(authorizable)) {
     return false;
   }
+
   if (!isDefined(authorizations)) {
     return true;
   }
+
   if (authorizations.length === 0) {
     return true;
   }
+
   return lodash.intersection(authorizable.authorizations, authorizations).length > 0;
 };
 
@@ -43,6 +46,7 @@ export interface IAppUser {
   is2FactorAuthActive: boolean;
   rememberToken: string;
   userDetails: IAppUserDetails;
+  authorizations: string[] ;
 }
 
 export interface Authorizable {
