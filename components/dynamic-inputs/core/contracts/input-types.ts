@@ -12,5 +12,6 @@ export enum InputTypes {
   HIDDEN_INPUT = 'hidden',
   FILE_INPUT = 'file',
   HTML_INPUT = 'html',
+  TIME_INPUT = 'time',
   CONTROL_GROUP = 'control_group'
 }

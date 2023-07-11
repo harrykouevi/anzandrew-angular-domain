@@ -15,7 +15,7 @@ import { CheckBoxInput, CheckboxItem, DateInput, NumberInput, TextInput, toDynam
 /**
  * Deep clones the given AbstractControl, preserving values, validators, async validators, and disabled status.
  * @param control AbstractControl
- * 
+ *
  * @returns {AbstractControl}
  */
 export function cloneAbstractControl<T extends AbstractControl>(control: T): T {
@@ -120,7 +120,20 @@ export class ComponentReactiveFormHelpers {
     uniqueValidator: UniqueValueService = null
   ): AbstractControl {
     const group = fb.group({});
-    input.map((config: IHTMLFormControl) => {
+
+
+    return ComponentReactiveFormHelpers.addControlToFormGroup(fb,group,input);
+  }
+
+  /**
+   * Generate an abstract form control using input configuration
+   * @param fb [[FormBuilder]] Angular forms reactive formbuilder
+   * @param fg [[FormGroup]]
+   * @param input [[DynamicInput]] dynamic input configuration
+   */
+  public static addControlToFormGroup( fb: FormBuilder,fg: FormGroup,input: IHTMLFormControl[], uniqueValidator: UniqueValueService = null){
+
+    input.map((config: IHTMLFormControl) =>{
       if (config.type !== InputTypes.CHECKBOX_INPUT) {
         const validators = [
           config.rules && config.rules.isRequired ? Validators.required : Validators.nullValidator
@@ -232,7 +245,7 @@ export class ComponentReactiveFormHelpers {
               null;
         }
         // Add formControl to the form group with the generated validation rules
-        group.addControl(
+        fg.addControl(
           config.formControlName,
           // new FormControl(), //
           fb.control(
@@ -263,10 +276,10 @@ export class ComponentReactiveFormHelpers {
         if (config.rules && config.rules.isRequired) {
           array.setValidators(Validators.required);
         }
-        group.addControl(config.formControlName, array);
+        fg.addControl(config.formControlName, array);
       }
-    });
-    return group;
+    })
+    return fg;
   }
 
   /**

@@ -72,10 +72,8 @@ export class AuthService implements OnDestroy {
     @Inject('LOGIN_RESPONSE_HANDLER_FUNC') private loginResponseHandlerFunc: MapToHandlerResponse<any>,
     @Inject('AUTH_SERVER_HOST') private host: string,
     @Inject('AUTH_LOGIN_PATH') private loginPath: string,
-    @Inject('AUTH_RH_LOGIN_PATH') private rhloginPath: string,
     @Inject('AUTH_LOGOUT_PATH') private logoutPath: string,
-    //harry add
-    @Inject('AUTH_RH_SERVER_HOST') private rhhost: string,
+
   ) {
     merge(this.httpClient.errorState$, observableOf({} as HTTPErrorState).
       pipe(

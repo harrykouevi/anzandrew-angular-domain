@@ -97,6 +97,18 @@
         (inputBlur)="inputBlur.emit($event)"
       ></app-dynamic-password-input>
     </div>
+    <div *ngSwitchCase="inputTypes.TIME_INPUT">
+      <app-dynamic-time-input
+        [controlDivContainerClass]="controlDivContainerClass"
+        [control]="control"
+        [inputConfig]="inputConfig"
+        [showLabelAndDescription]="showLabelAndDescription"
+        (inputKeyUp)="inputKeyUp.emit($event)"
+        (inputKeyDown)="inputKeyDown.emit($event)"
+        (inputKeypress)="inputKeypress.emit($event)"
+        (inputBlur)="inputBlur.emit($event)"
+      ></app-dynamic-time-input>
+    </div>
     <ng-container *ngSwitchDefault>
       <app-dynamic-text-input
         [controlDivContainerClass]="controlDivContainerClass"

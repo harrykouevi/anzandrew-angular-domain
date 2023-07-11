@@ -12,9 +12,10 @@
       (*)
     </small>
   </label>
+
   <ng-container *ngIf="inputItems$ | async as vm">
     <ng-select
-      [class]="inputConfig?.multiple ? '' : 'not-multiple'"
+      [class]="inputConfig?.multiple ? '' : 'not-multiple' + (inputConfig?.disabled ? ' disable-arrow disable-dropdown disable-clear-all' : '') "
       [virtualScroll]="true"
       [items]="vm?.state"
       [bindLabel]="'name'"

@@ -33,9 +33,26 @@ import { doLog } from '../../../../rxjs/operators';
       color: rgb(241, 50, 50);
     }
 
+
+    :host ::ng-deep .disable-arrow .ng-select-container .ng-arrow-wrapper .ng-arrow {
+      display: none;
+    }
+    :host ::ng-deep .disable-clear-all .ng-select-container .ng-clear-wrapper {
+      display: none;
+    }
+
+    .ng-select.disable-clear-all .ng-clear-wrapper {
+      display: none;
+    }
+    :host ::ng-deep .disable-dropdown .ng-dropdown-panel {
+      display: none;
+    }
+
     .clr-input-wrapper .clr-input:disabled {
       background: rgba(244, 244, 244, .3);
     }
+
+
     :host ::ng-deep .ng-select .ng-select-container, :host ::ng-deep .ng-select.ng-select-single .ng-select-container {
       min-height: 26px;
     }

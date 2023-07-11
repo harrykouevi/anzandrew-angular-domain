@@ -24,8 +24,8 @@ export interface AuthServerConfigs {
   companiesPath?: string;
 
   //harry add
-  rhhost: string;
-  rhloginPath: string;
+  // rhhost: string;
+  // rhloginPath: string;
 
 
 }
@@ -63,7 +63,7 @@ export class AuthModule {
           provide: 'AUTH_SERVER_HOST',
           useValue: config?.serverConfigs?.host || null
         },
-       
+
         {
           provide: 'AUTH_LOGIN_PATH',
           useValue: config?.serverConfigs?.loginPath || 'auth/login'
@@ -96,15 +96,7 @@ export class AuthModule {
           provide: 'AUTH_AGENCES_RESOURCE_PATH',
           useValue: config?.serverConfigs?.agencesPath || 'admin/companies'
         },
-        //harry add
-        {
-          provide: 'AUTH_RH_SERVER_HOST',
-          useValue: config?.serverConfigs?.rhhost || null
-        },
-        {
-          provide: 'AUTH_RH_LOGIN_PATH',
-          useValue: config?.serverConfigs?.rhloginPath || 'auth/login'
-        },
+
       ],
     };
   }

@@ -21,6 +21,7 @@ import { DynamicTextInputComponent } from './dynamic-text-input/dynamic-text-inp
 import { DynamicPasswordInputComponent } from './dynamic-password-input/dynamic-password-input.component';
 import { DynamicCheckoxInputComponent } from './dynamic-checkox-input/dynamic-checkox-input.component';
 import { DynamicRadioInputComponent } from './dynamic-radio-input/dynamic-radio-input.component';
+import { DynamicTimeInputComponent } from './dynamic-time-input/dynamic-time-input.component';
 
 
 type ModuleConfigs = {
@@ -57,6 +58,8 @@ type ModuleConfigs = {
     DynamicTextAreaInputComponent,
     DynamicNumberInputComponent,
     DynamicTextInputComponent,
+    DynamicTimeInputComponent,
+
     DynamicPasswordInputComponent,
     DynamicCheckoxInputComponent,
     DynamicRadioInputComponent
@@ -72,6 +75,7 @@ type ModuleConfigs = {
     DynamicTextAreaInputComponent,
     DynamicNumberInputComponent,
     DynamicTextInputComponent,
+    DynamicTimeInputComponent,
     DynamicPasswordInputComponent,
     DynamicCheckoxInputComponent,
     DynamicRadioInputComponent
